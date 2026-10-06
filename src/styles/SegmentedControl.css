@@ -1,0 +1,20 @@
+.seg { position: relative; display: flex; padding: 3px; background: var(--s1); border: 1px solid var(--line); border-radius: 3px; max-width: 520px; }
+.seg__pill {
+  position: absolute; left: 0; top: 0; background: var(--red); border-radius: 2px; pointer-events: none; will-change: transform, width;
+  transition: transform .5s var(--spring), width .5s var(--spring), height .3s var(--ease), scale .35s var(--spring);
+}
+.seg__pill.is-pressed { scale: .93; transition-duration: .5s, .5s, .3s, .1s; }
+.seg__opt {
+  position: relative; z-index: 1; flex: 1; padding: 13px 14px; border: 0; background: transparent; color: var(--mute);
+  font: 500 11px var(--sans); letter-spacing: .16em; text-transform: uppercase; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: transform .35s var(--spring), color .25s var(--ease);
+}
+.seg__opt:active { transform: scale(.92); transition-duration: .1s, .25s; }
+.seg__opt.is-active { color: var(--bg); font-weight: 600; }
+.seg__opt:focus-visible { outline: 1px solid var(--red); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .seg__pill, .seg__opt { transition-duration: .01ms; }
+  .seg__opt:active { transform: none; }
+  .seg__pill.is-pressed { scale: 1; }
+}

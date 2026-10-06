@@ -1,0 +1,26 @@
+.btn {
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between;
+  width: 100%; height: 84px; padding: 0 28px; border: 1px solid var(--fg); border-radius: 3px;
+  background: var(--fg); color: var(--bg); font-family: var(--disp); font-size: 36px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .4s var(--spring), border-color .25s var(--ease), color .25s var(--ease);
+}
+.btn::before { content: ""; position: absolute; inset: 0; background: var(--red); transform: scaleY(0); transform-origin: bottom; transition: transform .45s var(--ease); }
+.btn span { position: relative; transition: transform .45s var(--spring); }
+.btn--secondary { height: 60px; font-size: 22px; background: transparent; color: var(--fg); border-color: var(--line); margin-top: 10px; }
+.btn--secondary::before { background: var(--s2); }
+.btn:focus-visible { outline: 1px solid var(--red); outline-offset: 3px; }
+.btn:active { transform: scale(.985); transition-duration: .1s, .25s, .25s; }
+.btn:active::before { transform: scaleY(1); }
+
+@media (hover: hover) {
+  .btn:hover::before { transform: scaleY(1); }
+  .btn:hover { border-color: var(--red); }
+  .btn:hover span:last-child { transform: translateX(8px); }
+  .btn--secondary:hover { border-color: var(--red2); }
+}
+@media (max-width: 640px) { .btn { font-size: 30px; } .btn--secondary { font-size: 20px; } }
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::before, .btn span { transition-duration: .01ms; }
+  .btn:active { transform: none; }
+}

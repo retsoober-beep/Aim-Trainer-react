@@ -1,0 +1,13 @@
+.big { font-family: var(--disp); font-size: clamp(150px, 36vw, 460px); line-height: .82; margin: clamp(30px, 8vh, 90px) 0 0; font-variant-numeric: tabular-nums; }
+.rank { margin: 22px 0 clamp(30px, 7vh, 80px); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); margin-bottom: 36px; }
+.stat { padding: 18px 0 4px 16px; border-right: 1px solid var(--line); }
+.stat:first-child { padding-left: 0; }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-family: var(--disp); font-weight: 400; font-size: clamp(30px, 5vw, 56px); margin-top: 8px; }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(3) { padding-left: 0; border-top: 1px solid var(--line); margin-top: 14px; }
+  .stat:nth-child(4) { border-top: 1px solid var(--line); margin-top: 14px; }
+}

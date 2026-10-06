@@ -1,0 +1,6 @@
+.mega { font-family: var(--disp); font-weight: 400; text-transform: uppercase; line-height: .82; margin: clamp(40px, 9vh, 110px) 0 0; font-size: clamp(130px, 30vw, 380px); letter-spacing: -.01em; }
+.mega b { color: var(--red); font-weight: 400; }
+.lede { margin: 20px 0 clamp(40px, 9vh, 100px); max-width: 320px; font-size: 14px; line-height: 1.55; color: var(--mute); }
+.row { display: grid; grid-template-columns: minmax(150px, 1fr) 2fr; gap: 16px; align-items: center; padding: 22px 0; border-top: 1px solid var(--line); }
+.row .micro b { color: var(--fg); font-weight: 500; margin-right: 14px; }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr; gap: 12px; } }
